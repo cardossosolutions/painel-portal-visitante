@@ -125,7 +125,7 @@ const LoginScreen: React.FC = () => {
                 <span className="text-sm text-gray-600">Configuração da API:</span>
                 <button
                   onClick={() => setIsApiConfigModalOpen(true)}
-                  className="text-blue-600 hover:text-blue-800 p-1 rounded-full hover:bg-blue-50 transition-colors"
+                  className="text-green-600 hover:text-green-800 p-1 rounded-full hover:bg-green-50 transition-colors"
                   title="Configurar API"
                 >
                   <Settings className="w-4 h-4" />
