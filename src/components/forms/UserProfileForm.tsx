@@ -354,7 +354,7 @@ const UserProfileForm: React.FC<UserProfileFormProps> = ({ onClose }) => {
                 name="newPassword"
                 value={passwordData.newPassword}
                 onChange={handlePasswordChange}
-                className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10 ${
+                className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 pr-10 ${
                   passwordErrors.newPassword ? 'border-red-500' : 'border-gray-300'
                 }`}
                 placeholder="Digite a nova senha (mín. 6 caracteres)"
@@ -428,7 +428,7 @@ const UserProfileForm: React.FC<UserProfileFormProps> = ({ onClose }) => {
             <button
               type="submit"
               disabled={loading}
-              className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 flex items-center space-x-2"
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 flex items-center space-x-2"
             >
               {loading ? (
                 <Loader2 className="w-4 h-4 animate-spin" />
