@@ -51,6 +51,7 @@ const DashboardHome: React.FC = () => {
           );
         })}
       </div>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-white p-6 rounded-lg shadow-md">
@@ -89,17 +90,17 @@ const DashboardHome: React.FC = () => {
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Funcionalidades</h3>
           <div className="space-y-3">
-            <div className="p-3 bg-green-50 rounded-lg">
-              <h4 className="font-medium text-green-900">Gestão de Empresas</h4>
-              <p className="text-sm text-green-700">Cadastre e gerencie empresas parceiras</p>
+            <div className="p-3 bg-blue-50 rounded-lg">
+              <h4 className="font-medium text-blue-900">Controle de Acesso</h4>
+              <p className="text-sm text-blue-700">Gerencie visitantes e funcionários</p>
             </div>
             <div className="p-3 bg-green-50 rounded-lg">
               <h4 className="font-medium text-green-900">Agendamentos</h4>
-              <p className="text-sm text-green-700">Visualize agendamentos das empresas</p>
+              <p className="text-sm text-green-700">Agende visitas e controle horários</p>
             </div>
-            <div className="p-3 bg-green-50 rounded-lg">
-              <h4 className="font-medium text-green-900">Relatórios</h4>
-              <p className="text-sm text-green-700">Acompanhe estatísticas e relatórios</p>
+            <div className="p-3 bg-purple-50 rounded-lg">
+              <h4 className="font-medium text-purple-900">Relatórios</h4>
+              <p className="text-sm text-purple-700">Acompanhe estatísticas e relatórios</p>
             </div>
           </div>
         </div>
