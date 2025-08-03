@@ -101,8 +101,10 @@ const ApiConfigModal: React.FC<ApiConfigModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <h4 className="text-sm font-medium text-blue-800 mb-2">Host Atual:</h4>
-              <p className="text-sm text-blue-700 font-mono break-all">{API_CONFIG.BASE_URL}</p>
+            </div>
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <h4 className="text-sm font-medium text-green-800 mb-2">Host Atual:</h4>
+              <p className="text-sm text-green-700 font-mono break-all">{API_CONFIG.BASE_URL}</p>
             </div>
 
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
@@ -144,7 +146,7 @@ const ApiConfigModal: React.FC<ApiConfigModalProps> = ({ isOpen, onClose }) => {
               <button
                 onClick={handleSave}
                 disabled={loading}
-                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 flex items-center space-x-2"
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 flex items-center space-x-2"
               >
                 <Save className="w-4 h-4" />
                 <span>{loading ? 'Salvando...' : 'Salvar'}</span>
