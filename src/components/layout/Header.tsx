@@ -53,6 +53,7 @@ const Header: React.FC = () => {
                 <div className="bg-green-100 p-2 rounded-full">
                   <User className="w-5 h-5 text-green-600" />
                 </div>
+                </div>
                 <div className="text-left hidden md:block">
                   <div className="text-sm font-medium text-gray-700">{user?.name}</div>
                   <div className="text-xs text-gray-500">{user?.position || 'Usuário'}</div>

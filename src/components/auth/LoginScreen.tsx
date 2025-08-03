@@ -65,7 +65,6 @@ const LoginScreen: React.FC = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   placeholder="seu@email.com"
                 />
@@ -82,7 +81,6 @@ const LoginScreen: React.FC = () => {
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-10"
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent pr-10"
                     placeholder="Sua senha"
                   />
@@ -115,7 +113,6 @@ const LoginScreen: React.FC = () => {
               </button>
 
               <div className="text-center">
-                <a href="#" className="text-sm text-blue-600 hover:text-blue-800">
                 <a href="#" className="text-sm text-green-600 hover:text-green-800">
                   Esqueci minha senha
                 </a>
@@ -128,7 +125,7 @@ const LoginScreen: React.FC = () => {
                 <span className="text-sm text-gray-600">Configuração da API:</span>
                 <button
                   onClick={() => setIsApiConfigModalOpen(true)}
-                  className="text-green-600 hover:text-green-800 p-1 rounded-full hover:bg-green-50 transition-colors"
+                  className="text-blue-600 hover:text-blue-800 p-1 rounded-full hover:bg-blue-50 transition-colors"
                   title="Configurar API"
                 >
                   <Settings className="w-4 h-4" />
