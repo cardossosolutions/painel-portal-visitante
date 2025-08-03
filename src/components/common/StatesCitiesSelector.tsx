@@ -228,7 +228,6 @@ const StatesCitiesSelector: React.FC<StatesCitiesSelectorProps> = ({
         <div className="relative">
           <div
             className={`w-full px-3 py-2 border rounded-lg focus-within:ring-2 focus-within:ring-blue-500 cursor-pointer ${
-            className={`w-full px-3 py-2 border rounded-lg focus-within:ring-2 focus-within:ring-green-500 cursor-pointer ${
               cityError || citiesError ? 'border-red-500' : 'border-gray-300'
             } ${disabled || loadingCities || !selectedStateId || Number(selectedStateId) === 0 ? 'bg-gray-100 cursor-not-allowed' : 'bg-white'}`}
             onClick={() => {
@@ -293,8 +292,8 @@ const StatesCitiesSelector: React.FC<StatesCitiesSelectorProps> = ({
                       key={city.id}
                       type="button"
                       onClick={() => handleCitySelect(city)}
-                      className={`w-full text-left px-4 py-2 hover:bg-blue-50 focus:bg-blue-50 focus:outline-none ${
-                        Number(selectedCityId) === city.id ? 'bg-blue-100 font-medium' : ''
+                      className={`w-full text-left px-4 py-2 hover:bg-green-50 focus:bg-green-50 focus:outline-none ${
+                        Number(selectedCityId) === city.id ? 'bg-green-100 font-medium' : ''
                       }`}
                     >
                       {city.name}
