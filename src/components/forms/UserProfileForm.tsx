@@ -428,7 +428,7 @@ const UserProfileForm: React.FC<UserProfileFormProps> = ({ onClose }) => {
             <button
               type="submit"
               disabled={loading}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 flex items-center space-x-2"
+              className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 flex items-center space-x-2"
             >
               {loading ? (
                 <Loader2 className="w-4 h-4 animate-spin" />

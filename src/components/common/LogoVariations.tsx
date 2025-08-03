@@ -73,10 +73,10 @@ const LogoVariations: React.FC = () => {
       <div className="mt-8 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
         <h3 className="font-semibold mb-2">Paleta de Cores</h3>
         <div className="flex justify-center space-x-2">
-          <div className="w-8 h-8 bg-blue-600 rounded-full"></div>
-          <div className="w-8 h-8 bg-blue-700 rounded-full"></div>
           <div className="w-8 h-8 bg-green-600 rounded-full"></div>
-          <div className="w-8 h-8 bg-indigo-600 rounded-full"></div>
+          <div className="w-8 h-8 bg-green-700 rounded-full"></div>
+          <div className="w-8 h-8 bg-green-600 rounded-full"></div>
+          <div className="w-8 h-8 bg-green-800 rounded-full"></div>
           <div className="w-8 h-8 bg-gray-600 rounded-full"></div>
         </div>
       </div>
