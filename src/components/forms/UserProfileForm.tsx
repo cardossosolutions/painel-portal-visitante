@@ -190,8 +190,8 @@ const UserProfileForm: React.FC<UserProfileFormProps> = ({ onClose }) => {
   return (
     <div className="max-w-2xl mx-auto">
       <div className="flex items-center space-x-3 mb-6">
-        <div className="bg-blue-100 p-3 rounded-full">
-          <User className="w-6 h-6 text-blue-600" />
+        <div className="bg-green-100 p-3 rounded-full">
+          <User className="w-6 h-6 text-green-600" />
         </div>
         <h2 className="text-2xl font-bold text-gray-900">Meu Perfil</h2>
       </div>
@@ -203,7 +203,7 @@ const UserProfileForm: React.FC<UserProfileFormProps> = ({ onClose }) => {
             onClick={() => setActiveTab('profile')}
             className={`py-2 px-1 border-b-2 font-medium text-sm ${
               activeTab === 'profile'
-                ? 'border-blue-500 text-blue-600'
+                ? 'border-green-500 text-green-600'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
             }`}
           >
@@ -216,7 +216,7 @@ const UserProfileForm: React.FC<UserProfileFormProps> = ({ onClose }) => {
             onClick={() => setActiveTab('password')}
             className={`py-2 px-1 border-b-2 font-medium text-sm ${
               activeTab === 'password'
-                ? 'border-blue-500 text-blue-600'
+                ? 'border-green-500 text-green-600'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
             }`}
           >

@@ -59,24 +59,6 @@ const Dashboard: React.FC = () => {
         return <DashboardHome />;
       case 'companies':
         return <CompanyManagement />;
-      case 'residences':
-        return <ResidenceManagement />;
-      case 'service-providers':
-        return <ServiceProviderManagement />;
-      case 'employees':
-        return <EmployeeManagement />;
-      case 'guests':
-        return <GuestManagement />;
-      case 'appointments':
-        return <AppointmentManagement />;
-      case 'visitor-schedule':
-        return <VisitorScheduleView />;
-      case 'provider-schedule':
-        return <ProviderScheduleView />;
-      case 'delivery-schedule':
-        return <DeliveryScheduleView />;
-      case 'deliveries':
-        return <DeliveryManagement />;
       default:
         console.warn('⚠️ Seção desconhecida:', activeSection, '- redirecionando para home');
         // Se a seção não existir, voltar para home

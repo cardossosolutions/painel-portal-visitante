@@ -278,8 +278,8 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
   return (
     <div>
       <div className="flex items-center space-x-3 mb-6">
-        <div className="bg-blue-100 p-3 rounded-full">
-          <Building className="w-6 h-6 text-blue-600" />
+        <div className="bg-green-100 p-3 rounded-full">
+          <Building className="w-6 h-6 text-green-600" />
         </div>
         <h2 className="text-2xl font-bold text-gray-900">
           {company ? 'Editar Empresa' : 'Nova Empresa'}
@@ -300,6 +300,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
               placeholder="12.345.678/0001-90"
               maxLength={18}
               className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 ${
                 errors.cnpj ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -318,6 +319,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
               onChange={handleChange}
               placeholder="Razão social da empresa"
               className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 ${
                 errors.razaoSocial ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -368,6 +370,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
               onClick={handleCepLookup}
               disabled={cepLoading || formData.cep.replace(/\D/g, '').length !== 8}
               className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 transition-colors"
+              className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 transition-colors"
               title="Buscar endereço pelo CEP"
             >
               {cepLoading ? (
@@ -534,7 +537,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
           <button
             type="submit"
             disabled={loading}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
           >
             <div className="flex items-center space-x-2">
               {loading ? (

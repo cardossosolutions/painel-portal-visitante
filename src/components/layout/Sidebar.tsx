@@ -24,16 +24,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
 
   const menuItems = [
     { id: 'home', label: 'Dashboard', icon: Home },
-    { id: 'visitor-schedule', label: 'Visualizar Agendamentos', icon: Eye },
-    { id: 'provider-schedule', label: 'Visualizar Prestadores', icon: Briefcase },
-    { id: 'delivery-schedule', label: 'Visualizar Entregas', icon: Package },
     { id: 'companies', label: 'Empresas', icon: Building },
-    { id: 'residences', label: 'Residências', icon: Home },
-    { id: 'employees', label: 'Funcionários', icon: Users },
-    { id: 'guests', label: 'Convidados', icon: UserCheck },
-    { id: 'appointments', label: 'Agendamentos', icon: Calendar },
-    { id: 'service-providers', label: 'Prestadores de Serviços', icon: Briefcase },
-    { id: 'deliveries', label: 'Entregas', icon: Package },
   ];
 
   const handleMenuClick = (itemId: string) => {
@@ -47,8 +38,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
         <div className="flex items-center justify-between">
           {!isCollapsed && (
             <div className="flex items-center space-x-2">
-              <Shield className="w-8 h-8 text-blue-600" />
-              <h1 className="text-xl font-bold text-gray-800">Portal do Visitante</h1>
+              <Shield className="w-8 h-8 text-green-600" />
+              <h1 className="text-xl font-bold text-gray-800">Painel do Visitante</h1>
             </div>
           )}
           <button
@@ -72,14 +63,14 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
               onClick={() => handleMenuClick(item.id)}
               className={`w-full flex items-center px-4 py-3 text-left transition-colors group ${
                 isActive
-                  ? 'bg-blue-50 text-blue-600 border-r-4 border-blue-600'
-                  : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
+                  ? 'bg-green-50 text-green-600 border-r-4 border-green-600'
+                  : 'text-gray-700 hover:bg-gray-50 hover:text-green-600'
               }`}
               title={isCollapsed ? item.label : undefined}
             >
-              <IconComponent className={`w-5 h-5 mr-3 ${isActive ? 'text-blue-600' : 'text-gray-500 group-hover:text-blue-600'}`} />
+              <IconComponent className={`w-5 h-5 mr-3 ${isActive ? 'text-green-600' : 'text-gray-500 group-hover:text-green-600'}`} />
               {!isCollapsed && (
-                <span className={`font-medium ${isActive ? 'text-blue-600' : 'text-gray-700 group-hover:text-blue-600'}`}>
+                <span className={`font-medium ${isActive ? 'text-green-600' : 'text-gray-700 group-hover:text-green-600'}`}>
                   {item.label}
                 </span>
               )}

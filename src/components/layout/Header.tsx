@@ -32,7 +32,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16 px-6">
           <div className="flex items-center space-x-4">
             <h2 className="text-xl font-semibold text-gray-800">
-              Sistema de Controle de Acesso
+              Painel do Visitante - Backoffice
             </h2>
           </div>
 
@@ -50,7 +50,8 @@ const Header: React.FC = () => {
                 className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 transition-colors"
               >
                 <div className="bg-blue-100 p-2 rounded-full">
-                  <User className="w-5 h-5 text-blue-600" />
+                <div className="bg-green-100 p-2 rounded-full">
+                  <User className="w-5 h-5 text-green-600" />
                 </div>
                 <div className="text-left hidden md:block">
                   <div className="text-sm font-medium text-gray-700">{user?.name}</div>

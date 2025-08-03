@@ -226,7 +226,7 @@ const CompanyManagement: React.FC = () => {
           disabled={loading}
           className={`px-3 py-2 text-sm font-medium border border-gray-300 disabled:opacity-50 ${
             page === currentPage
-              ? 'bg-blue-600 text-white border-blue-600'
+              ? 'bg-green-600 text-white border-green-600'
               : 'text-gray-500 bg-white hover:bg-gray-50'
           }`}
         >
@@ -276,7 +276,7 @@ const CompanyManagement: React.FC = () => {
         <h1 className="text-3xl font-bold text-gray-900">Empresas</h1>
         <button
           onClick={() => setIsModalOpen(true)}
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2"
+          className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center space-x-2"
         >
           <Plus className="w-5 h-5" />
           <span>Nova Empresa</span>
@@ -293,11 +293,12 @@ const CompanyManagement: React.FC = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
           {loading && (
-            <div className="flex items-center space-x-2 text-blue-600">
-              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
+            <div className="flex items-center space-x-2 text-green-600">
+              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-green-600"></div>
               <span className="text-sm">Carregando...</span>
             </div>
           )}
@@ -353,8 +354,8 @@ const CompanyManagement: React.FC = () => {
                 <tr key={company.id} className="hover:bg-gray-50">
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center">
-                      <div className="bg-blue-100 p-2 rounded-full mr-3">
-                        <Building className="w-5 h-5 text-blue-600" />
+                      <div className="bg-green-100 p-2 rounded-full mr-3">
+                        <Building className="w-5 h-5 text-green-600" />
                       </div>
                       <div>
                         <div className="text-sm font-medium text-gray-900">{company.fantasy_name}</div>
@@ -385,7 +386,7 @@ const CompanyManagement: React.FC = () => {
                       <button
                         onClick={() => handleEdit(company)}
                         disabled={loadingCompanyData[company.id]}
-                        className="text-blue-600 hover:text-blue-800 p-1 rounded-full hover:bg-blue-50 transition-colors"
+                        className="text-green-600 hover:text-green-800 p-1 rounded-full hover:bg-green-50 transition-colors"
                         title="Editar"
                       >
                         {loadingCompanyData[company.id] ? (

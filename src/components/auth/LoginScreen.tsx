@@ -44,13 +44,13 @@ const LoginScreen: React.FC = () => {
           <div className="max-w-md w-full space-y-8">
             <div className="text-center">
               <div className="flex justify-center mb-6">
-                <div className="bg-blue-100 p-4 rounded-full">
-                  <Shield className="w-12 h-12 text-blue-600" />
+                <div className="bg-green-100 p-4 rounded-full">
+                  <Shield className="w-12 h-12 text-green-600" />
                 </div>
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">Portal do Visitante</h2>
+              <h2 className="text-3xl font-bold text-gray-900">Painel do Visitante</h2>
               <p className="mt-2 text-gray-600">
-                Sistema de controle de acesso para condomínios
+                Backoffice para gestão de empresas
               </p>
             </div>
 
@@ -66,6 +66,7 @@ const LoginScreen: React.FC = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   placeholder="seu@email.com"
                 />
               </div>
@@ -82,6 +83,7 @@ const LoginScreen: React.FC = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-10"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent pr-10"
                     placeholder="Sua senha"
                   />
                   <button
@@ -107,13 +109,14 @@ const LoginScreen: React.FC = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 {loading ? 'Entrando...' : 'Entrar'}
               </button>
 
               <div className="text-center">
                 <a href="#" className="text-sm text-blue-600 hover:text-blue-800">
+                <a href="#" className="text-sm text-green-600 hover:text-green-800">
                   Esqueci minha senha
                 </a>
               </div>
@@ -125,7 +128,7 @@ const LoginScreen: React.FC = () => {
                 <span className="text-sm text-gray-600">Configuração da API:</span>
                 <button
                   onClick={() => setIsApiConfigModalOpen(true)}
-                  className="text-blue-600 hover:text-blue-800 p-1 rounded-full hover:bg-blue-50 transition-colors"
+                  className="text-green-600 hover:text-green-800 p-1 rounded-full hover:bg-green-50 transition-colors"
                   title="Configurar API"
                 >
                   <Settings className="w-4 h-4" />
