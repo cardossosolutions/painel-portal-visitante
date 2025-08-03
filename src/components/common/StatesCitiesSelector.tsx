@@ -132,7 +132,6 @@ const StatesCitiesSelector: React.FC<StatesCitiesSelectorProps> = ({
         <div className="relative">
           <div
             className={`w-full px-3 py-2 border rounded-lg focus-within:ring-2 focus-within:ring-blue-500 cursor-pointer ${
-            className={`w-full px-3 py-2 border rounded-lg focus-within:ring-2 focus-within:ring-green-500 cursor-pointer ${
               stateError || statesError ? 'border-red-500' : 'border-gray-300'
             } ${disabled || loadingStates ? 'bg-gray-100 cursor-not-allowed' : 'bg-white'}`}
             onClick={() => !disabled && !loadingStates && setShowStateDropdown(!showStateDropdown)}
@@ -229,6 +228,7 @@ const StatesCitiesSelector: React.FC<StatesCitiesSelectorProps> = ({
         <div className="relative">
           <div
             className={`w-full px-3 py-2 border rounded-lg focus-within:ring-2 focus-within:ring-blue-500 cursor-pointer ${
+            className={`w-full px-3 py-2 border rounded-lg focus-within:ring-2 focus-within:ring-green-500 cursor-pointer ${
               cityError || citiesError ? 'border-red-500' : 'border-gray-300'
             } ${disabled || loadingCities || !selectedStateId || Number(selectedStateId) === 0 ? 'bg-gray-100 cursor-not-allowed' : 'bg-white'}`}
             onClick={() => {
