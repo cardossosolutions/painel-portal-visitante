@@ -1,160 +1,86 @@
-import React, { useState } from 'react';
-import { Shield, Building, Eye, EyeOff, Globe, Settings } from 'lucide-react';
-import { useAuth } from '../../contexts/AuthContext';
-import LogoVariations from '../common/LogoVariations';
-import ApiConfigModal from '../common/ApiConfigModal';
-import { API_CONFIG } from '../../config/api';
+import React from 'react';
+import { 
+  Home, 
+  Building, 
+  Shield,
+  Menu,
+  X
+} from 'lucide-react';
+import { useState } from 'react';
 
-const LoginScreen: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [isApiConfigModalOpen, setIsApiConfigModalOpen] = useState(false);
-  const { login } = useAuth();
+interface SidebarProps {
+  activeSection: string;
+  setActiveSection: (section: string) => void;
+}
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError('');
-    setLoading(true);
+const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) => {
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
-    try {
-      const success = await login(email, password);
-      if (!success) {
-        setError('Email ou senha incorretos');
-      }
-    } catch (err) {
-      setError('Erro ao conectar com o servidor. Verifique a configuração da API.');
-    } finally {
-      setLoading(false);
-    }
+  const menuItems = [
+    { id: 'home', label: 'Dashboard', icon: Home },
+    { id: 'companies', label: 'Empresas', icon: Building },
+  ];
+
+  const handleMenuClick = (itemId: string) => {
+    console.log('📱 Sidebar - Item clicado:', itemId);
+    setActiveSection(itemId);
   };
 
   return (
-    <>
-      <div className="min-h-screen flex">
-        {/* Left side - Logo variations */}
-        <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-blue-600 to-blue-800 p-8 flex-col justify-center items-center">
-          <LogoVariations />
-        </div>
-
-        {/* Right side - Login form */}
-        <div className="flex-1 flex items-center justify-center p-8">
-          <div className="max-w-md w-full space-y-8">
-            <div className="text-center">
-              <div className="flex justify-center mb-6">
-                <div className="bg-green-100 p-4 rounded-full">
-                  <Shield className="w-12 h-12 text-green-600" />
-                </div>
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900">Painel do Visitante</h2>
-              <p className="mt-2 text-gray-600">
-                Backoffice para gestão de empresas
-              </p>
+    <div className={`bg-white shadow-lg transition-all duration-300 ${isCollapsed ? 'w-16' : 'w-64'}`}>
+      <div className="p-4">
+        <div className="flex items-center justify-between">
+          {!isCollapsed && (
+            <div className="flex items-center space-x-2">
+              <Shield className="w-8 h-8 text-green-600" />
+              <h1 className="text-xl font-bold text-gray-800">Painel do Visitante</h1>
             </div>
-
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                  placeholder="seu@email.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                  Senha
-                </label>
-                <div className="relative">
-                  <input
-                    id="password"
-                    type={showPassword ? 'text' : 'password'}
-                    required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent pr-10"
-                    placeholder="Sua senha"
-                  />
-                  <button
-                    type="button"
-                    className="absolute inset-y-0 right-0 pr-3 flex items-center"
-                    onClick={() => setShowPassword(!showPassword)}
-                  >
-                    {showPassword ? (
-                      <EyeOff className="w-5 h-5 text-gray-400" />
-                    ) : (
-                      <Eye className="w-5 h-5 text-gray-400" />
-                    )}
-                  </button>
-                </div>
-              </div>
-
-              {error && (
-                <div className="text-red-600 text-sm text-center bg-red-50 border border-red-200 rounded-lg p-3">
-                  {error}
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-              >
-                {loading ? 'Entrando...' : 'Entrar'}
-              </button>
-
-              <div className="text-center">
-                <a href="#" className="text-sm text-green-600 hover:text-green-800">
-                  Esqueci minha senha
-                </a>
-              </div>
-            </form>
-
-            {/* API Configuration */}
-            <div className="border-t border-gray-200 pt-6">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-sm text-gray-600">Configuração da API:</span>
-                <button
-                  onClick={() => setIsApiConfigModalOpen(true)}
-                  className="text-green-600 hover:text-green-800 p-1 rounded-full hover:bg-green-50 transition-colors"
-                  title="Configurar API"
-                >
-                  <Settings className="w-4 h-4" />
-                </button>
-              </div>
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-3">
-                <div className="flex items-center space-x-2 text-xs text-gray-600">
-                  <Globe className="w-3 h-3 flex-shrink-0" />
-                  <span className="font-mono break-all">{API_CONFIG.BASE_URL}</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center text-xs text-gray-500">
-              <p>Credenciais de teste:</p>
-              <p>Email: admin@condominio.com</p>
-              <p>Senha: admin123</p>
-            </div>
-          </div>
+          )}
+          <button
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            title={isCollapsed ? 'Expandir menu' : 'Recolher menu'}
+          >
+            {isCollapsed ? <Menu className="w-5 h-5" /> : <X className="w-5 h-5" />}
+          </button>
         </div>
       </div>
 
-      {/* API Configuration Modal */}
-      <ApiConfigModal 
-        isOpen={isApiConfigModalOpen} 
-        onClose={() => setIsApiConfigModalOpen(false)} 
-      />
-    </>
+      <nav className="mt-8">
+        {menuItems.map((item) => {
+          const IconComponent = item.icon;
+          const isActive = activeSection === item.id;
+          
+          return (
+            <button
+              key={item.id}
+              onClick={() => handleMenuClick(item.id)}
+              className={`w-full flex items-center px-4 py-3 text-left transition-colors group ${
+                isActive
+                  ? 'bg-green-50 text-green-600 border-r-4 border-green-600'
+                  : 'text-gray-700 hover:bg-gray-50 hover:text-green-600'
+              }`}
+              title={isCollapsed ? item.label : undefined}
+            >
+              <IconComponent className={`w-5 h-5 mr-3 ${isActive ? 'text-green-600' : 'text-gray-500 group-hover:text-green-600'}`} />
+              {!isCollapsed && (
+                <span className={`font-medium ${isActive ? 'text-green-600' : 'text-gray-700 group-hover:text-green-600'}`}>
+                  {item.label}
+                </span>
+              )}
+            </button>
+          );
+        })}
+      </nav>
+
+      {/* Indicador da seção ativa quando collapsed */}
+      {isCollapsed && (
+        <div className="fixed left-20 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+          {menuItems.find(item => item.id === activeSection)?.label}
+        </div>
+      )}
+    </div>
   );
 };
 
-export default LoginScreen;
+export default Sidebar;

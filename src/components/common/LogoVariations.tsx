@@ -1,87 +1,86 @@
 import React from 'react';
-import { Shield, Building, Users, Key, Home, CheckCircle } from 'lucide-react';
+import { 
+  Home, 
+  Building, 
+  Shield,
+  Menu,
+  X
+} from 'lucide-react';
+import { useState } from 'react';
 
-const LogoVariations: React.FC = () => {
-  const variations = [
-    {
-      name: 'Versão Principal',
-      icon: Shield,
-      color: 'text-white',
-      bg: 'bg-blue-600',
-      description: 'Ícone principal com escudo representando segurança'
-    },
-    {
-      name: 'Versão Condomínio',
-      icon: Building,
-      color: 'text-white',
-      bg: 'bg-blue-500',
-      description: 'Ícone de prédio para representar condomínio'
-    },
-    {
-      name: 'Versão Visitantes',
-      icon: Users,
-      color: 'text-white',
-      bg: 'bg-green-600',
-      description: 'Ícone de pessoas para representar visitantes'
-    },
-    {
-      name: 'Versão Acesso',
-      icon: Key,
-      color: 'text-white',
-      bg: 'bg-blue-700',
-      description: 'Ícone de chave para controle de acesso'
-    },
-    {
-      name: 'Versão Residência',
-      icon: Home,
-      color: 'text-white',
-      bg: 'bg-indigo-600',
-      description: 'Ícone de casa para residências'
-    },
-    {
-      name: 'Versão Aprovação',
-      icon: CheckCircle,
-      color: 'text-white',
-      bg: 'bg-green-700',
-      description: 'Ícone de aprovação para autorizações'
-    }
+interface SidebarProps {
+  activeSection: string;
+  setActiveSection: (section: string) => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) => {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  const menuItems = [
+    { id: 'home', label: 'Dashboard', icon: Home },
+    { id: 'companies', label: 'Empresas', icon: Building },
   ];
 
-  return (
-    <div className="text-center text-white">
-      <h1 className="text-4xl font-bold mb-4">Portal do Visitante</h1>
-      <p className="text-xl mb-8 text-blue-100">Variações de Logo</p>
-      
-      <div className="grid grid-cols-2 gap-6 max-w-lg mx-auto">
-        {variations.map((variation, index) => {
-          const IconComponent = variation.icon;
-          return (
-            <div
-              key={index}
-              className="bg-white bg-opacity-10 p-4 rounded-lg backdrop-blur-sm hover:bg-opacity-20 transition-all duration-300"
-            >
-              <div className={`${variation.bg} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3`}>
-                <IconComponent className={`w-8 h-8 ${variation.color}`} />
-              </div>
-              <h3 className="font-semibold text-sm mb-1">{variation.name}</h3>
-              <p className="text-xs text-blue-100">{variation.description}</p>
-            </div>
-          );
-        })}
-      </div>
+  const handleMenuClick = (itemId: string) => {
+    console.log('📱 Sidebar - Item clicado:', itemId);
+    setActiveSection(itemId);
+  };
 
-      <div className="mt-8 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
-        <h3 className="font-semibold mb-2">Paleta de Cores</h3>
-        <div className="flex justify-center space-x-2">
-          <div className="w-8 h-8 bg-green-600 rounded-full"></div>
-          <div className="w-8 h-8 bg-green-700 rounded-full"></div>
-          <div className="w-8 h-8 bg-green-600 rounded-full"></div>
-          <div className="w-8 h-8 bg-green-800 rounded-full"></div>
-          <div className="w-8 h-8 bg-gray-600 rounded-full"></div>
+  return (
+    <div className={`bg-white shadow-lg transition-all duration-300 ${isCollapsed ? 'w-16' : 'w-64'}`}>
+      <div className="p-4">
+        <div className="flex items-center justify-between">
+          {!isCollapsed && (
+            <div className="flex items-center space-x-2">
+              <Shield className="w-8 h-8 text-green-600" />
+              <h1 className="text-xl font-bold text-gray-800">Painel do Visitante</h1>
+            </div>
+          )}
+          <button
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            title={isCollapsed ? 'Expandir menu' : 'Recolher menu'}
+          >
+            {isCollapsed ? <Menu className="w-5 h-5" /> : <X className="w-5 h-5" />}
+          </button>
         </div>
       </div>
+
+      <nav className="mt-8">
+        {menuItems.map((item) => {
+          const IconComponent = item.icon;
+          const isActive = activeSection === item.id;
+          
+          return (
+            <button
+              key={item.id}
+              onClick={() => handleMenuClick(item.id)}
+              className={`w-full flex items-center px-4 py-3 text-left transition-colors group ${
+                isActive
+                  ? 'bg-green-50 text-green-600 border-r-4 border-green-600'
+                  : 'text-gray-700 hover:bg-gray-50 hover:text-green-600'
+              }`}
+              title={isCollapsed ? item.label : undefined}
+            >
+              <IconComponent className={`w-5 h-5 mr-3 ${isActive ? 'text-green-600' : 'text-gray-500 group-hover:text-green-600'}`} />
+              {!isCollapsed && (
+                <span className={`font-medium ${isActive ? 'text-green-600' : 'text-gray-700 group-hover:text-green-600'}`}>
+                  {item.label}
+                </span>
+              )}
+            </button>
+          );
+        })}
+      </nav>
+
+      {/* Indicador da seção ativa quando collapsed */}
+      {isCollapsed && (
+        <div className="fixed left-20 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+          {menuItems.find(item => item.id === activeSection)?.label}
+        </div>
+      )}
     </div>
   );
 };
 
-export default LogoVariations;
+export default Sidebar;
