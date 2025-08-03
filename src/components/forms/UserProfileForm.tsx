@@ -290,9 +290,9 @@ const UserProfileForm: React.FC<UserProfileFormProps> = ({ onClose }) => {
             <p className="text-xs text-gray-500 mt-1">Telefone fixo ou celular</p>
           </div>
 
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h4 className="text-sm font-medium text-blue-800 mb-2">Informação:</h4>
-            <p className="text-sm text-blue-700">
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+            <h4 className="text-sm font-medium text-green-800 mb-2">Informação:</h4>
+            <p className="text-sm text-green-700">
               Os dados pessoais são somente leitura. Para alterações, entre em contato com o administrador do sistema.
             </p>
           </div>
@@ -354,7 +354,7 @@ const UserProfileForm: React.FC<UserProfileFormProps> = ({ onClose }) => {
                 name="newPassword"
                 value={passwordData.newPassword}
                 onChange={handlePasswordChange}
-                className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 pr-10 ${
+                className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10 ${
                   passwordErrors.newPassword ? 'border-red-500' : 'border-gray-300'
                 }`}
                 placeholder="Digite a nova senha (mín. 6 caracteres)"
