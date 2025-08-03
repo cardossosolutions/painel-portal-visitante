@@ -58,29 +58,29 @@ const DashboardHome: React.FC = () => {
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Atividade Recente</h3>
           <div className="space-y-3">
             <div className="flex items-center space-x-3">
-              <div className="bg-green-100 p-2 rounded-full">
-                <Building className="w-4 h-4 text-green-600" />
+              <div className="bg-blue-100 p-2 rounded-full">
+                <UserCheck className="w-4 h-4 text-blue-600" />
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-900">Nova empresa cadastrada</p>
+                <p className="text-sm font-medium text-gray-900">Novo convidado cadastrado</p>
                 <p className="text-xs text-gray-500">Há 2 horas</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <div className="bg-green-100 p-2 rounded-full">
-                <Building className="w-4 h-4 text-green-600" />
+                <Calendar className="w-4 h-4 text-green-600" />
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-900">Empresa atualizada</p>
+                <p className="text-sm font-medium text-gray-900">Agendamento confirmado</p>
                 <p className="text-xs text-gray-500">Há 4 horas</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
-              <div className="bg-green-100 p-2 rounded-full">
-                <Building className="w-4 h-4 text-green-600" />
+              <div className="bg-purple-100 p-2 rounded-full">
+                <Building className="w-4 h-4 text-purple-600" />
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-900">Sistema atualizado</p>
+                <p className="text-sm font-medium text-gray-900">Nova empresa registrada</p>
                 <p className="text-xs text-gray-500">Há 6 horas</p>
               </div>
             </div>
@@ -90,17 +90,17 @@ const DashboardHome: React.FC = () => {
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Funcionalidades</h3>
           <div className="space-y-3">
-            <div className="p-3 bg-green-50 rounded-lg">
-              <h4 className="font-medium text-green-900">Gestão de Empresas</h4>
-              <p className="text-sm text-green-700">Cadastre e gerencie empresas parceiras</p>
+            <div className="p-3 bg-blue-50 rounded-lg">
+              <h4 className="font-medium text-blue-900">Controle de Acesso</h4>
+              <p className="text-sm text-blue-700">Gerencie visitantes e funcionários</p>
             </div>
             <div className="p-3 bg-green-50 rounded-lg">
               <h4 className="font-medium text-green-900">Agendamentos</h4>
-              <p className="text-sm text-green-700">Visualize agendamentos das empresas</p>
+              <p className="text-sm text-green-700">Agende visitas e controle horários</p>
             </div>
-            <div className="p-3 bg-green-50 rounded-lg">
-              <h4 className="font-medium text-green-900">Relatórios</h4>
-              <p className="text-sm text-green-700">Acompanhe estatísticas e relatórios</p>
+            <div className="p-3 bg-purple-50 rounded-lg">
+              <h4 className="font-medium text-purple-900">Relatórios</h4>
+              <p className="text-sm text-purple-700">Acompanhe estatísticas e relatórios</p>
             </div>
           </div>
         </div>
