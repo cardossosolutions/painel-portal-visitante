@@ -317,7 +317,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
               value={formData.razaoSocial}
               onChange={handleChange}
               placeholder="Razão social da empresa"
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 ${
                 errors.razaoSocial ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -337,7 +337,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
             value={formData.nomeFantasia}
             onChange={handleChange}
             placeholder="Nome fantasia da empresa"
-            className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+            className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 ${
               errors.nomeFantasia ? 'border-red-500' : 'border-gray-300'
             }`}
           />
@@ -359,7 +359,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
               onChange={handleChange}
               placeholder="12345-678"
               maxLength={9}
-              className={`flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+              className={`flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 ${
                 errors.cep || cepError ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -399,7 +399,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
               value={formData.logradouro}
               onChange={handleChange}
               placeholder="Rua, Avenida, etc."
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 ${
                 errors.logradouro ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -417,7 +417,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
               value={formData.numero}
               onChange={handleChange}
               placeholder="123"
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 ${
                 errors.numero ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -438,7 +438,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
               value={formData.complemento}
               onChange={handleChange}
               placeholder="Sala, Andar, etc."
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
           <div>
@@ -451,7 +451,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
               value={formData.bairro}
               onChange={handleChange}
               placeholder="Nome do bairro"
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 ${
                 errors.bairro ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -483,7 +483,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
               value={formData.email}
               onChange={handleChange}
               placeholder="contato@empresa.com"
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 ${
                 errors.email ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -502,7 +502,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
               onChange={handleChange}
               placeholder="(11) 3333-4444"
               maxLength={14}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
             />
             <p className="text-xs text-gray-500 mt-1">Telefone fixo</p>
           </div>
@@ -517,7 +517,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
               onChange={handleChange}
               placeholder="(11) 99999-9999"
               maxLength={15}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
             />
             <p className="text-xs text-gray-500 mt-1">Telefone celular</p>
           </div>
@@ -534,7 +534,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ company, onClose }) => {
           <button
             type="submit"
             disabled={loading}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
           >
             <div className="flex items-center space-x-2">
               {loading ? (
